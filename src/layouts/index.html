@@ -1,0 +1,40 @@
+{{!-- This is the base layout for your project, and will be used on every page unless specified. --}}
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{meta-title}} | Foundation for Sites</title>
+    <link rel="stylesheet" href="{{root}}assets/css/app.css">
+  </head>
+  <body>
+  <div class="top-bar" id="main-menu">
+    <div class="top-bar-left">
+      <div class="top-bar-title logo">
+        <img src="{{root}}assets/img/logo.png" >
+      </div>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu vertical medium-horizontal expanded" data-responsive-menu="drilldown medium-dropdown">
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">APIs/History</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="current-progress">
+    <a class="current" href="#" id="progress-1"> <i class="current fa fa-file-text fa-3x"></i> <br>General Information</a> 
+    <a href="#" id="progress-2"> <i class="fa fa-id-card fa-3x"></i><br> Namespace </a> 
+    <a href="#" id="progress-3"> <i class="fa fa-keyboard-o fa-3x"></i><br> Configuration </a> 
+    <a href="#" id="progress-4"> <i class="fa fa-space-shuttle fa-3x"></i><br> Start Coding! </a> 
+  </div>
+  
+    {{> body}}
+    
+    <script src="{{root}}assets/js/app.js"></script>
+  </body>
+</html>
