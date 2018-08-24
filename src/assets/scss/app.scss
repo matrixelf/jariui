@@ -130,3 +130,9 @@
 .tilt{
 	transform: rotate(-45deg); 
 }
+
+.required{
+	display: inline-block;
+	color: red;
+	font-size: .75em;
+}
