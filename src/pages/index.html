@@ -12,7 +12,11 @@ meta-title: JARI Code Generator
 
 	    <div class="grid-x grid-margin-x">
 	      <fieldset class="cell small-12">
-	        <legend>API Type</legend>
+	        <legend>API Type 	        
+	        	<!-- https://forums.mulesoft.com/questions/46895/system-api-process-api-experience-api-design-princ.html -->
+	        	<div data-tooltip tabindex="1" title="A system API is a microservice. A process API is a combination of multiple system APIs. An experience API is the layer the consumer will interact with." class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
+	        </legend>
+
 	        <input type="radio" name="type" value="process" id="process"><label for="process">Process</label>
 	        <input type="radio" name="type" value="system" id="system" required><label for="system">System</label>
 	        <input class="" type="radio" name="type" value="experience" id="experience"><label for="experience">Experience</label>
@@ -21,7 +25,9 @@ meta-title: JARI Code Generator
 
 	    <div class="grid-x grid-margin-x">
 	      <fieldset class="cell small-12">
-	        <legend>Technology (required)</legend>
+	        <legend>Technology 
+				<div data-tooltip tabindex="1" title="Spring boot is a framework for Spring based applications. MSF4J is a java framework for microservices. .Net funcationality will be added in the furture." class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
+	        </legend>
 	        <input type="radio" name="technology" value="SpringBoot" id="SpringBoot"><label for="SpringBoot">Spring Boot</label>
 	        <input type="radio" name="technology" value="MSF4J" id="MSF4J" required><label for="MSF4J">MSF4J</label>
 	        <input class="" type="radio" name="technology" value="Net" id="Net"><label for="Net">.Net</label>
@@ -54,7 +60,8 @@ meta-title: JARI Code Generator
 		<div class="grid-x grid-margin-x">
 	      <div class="cell small-12">
 	        <label>Subsystem Name
-	          <input type="text" placeholder="Subsystem Name" aria-describedby="" aria-errormessage="example1Error1" required pattern="alpha">
+				<div data-tooltip tabindex="1" title="The subsystem name will be used for logging. Examples: PWS. MDB, PUB-SUB, etc." class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
+	          <input type="text" placeholder="" aria-describedby="" aria-errormessage="example1Error1" required pattern="alpha">
 	          <span class="form-error" id="example1Error1">
 	            Subsystem Name is required!
 	          </span>
