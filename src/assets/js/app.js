@@ -16,6 +16,8 @@ window.libs = libs;
 //This must occur before fondation is called!
 Foundation.Abide.defaults.patterns['version'] = /^\d+(\.\d+)*$/;
 Foundation.Abide.defaults.patterns['artifact'] = /^[0-9A-Za-z_.-]+$/;
+Foundation.Abide.defaults.patterns['alphaspace'] = /^[a-zA-Z ]+$/;
+Foundation.Abide.defaults.patterns['alphaspecial'] = /^[a-zA-Z !-_?.,]+$/;
 
 $(document).foundation();
 
