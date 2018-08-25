@@ -18,7 +18,8 @@ Foundation.Abide.defaults.patterns['version'] = /^\d+(\.\d+)*$/;
 Foundation.Abide.defaults.patterns['artifact'] = /^[0-9A-Za-z_.-]+$/;
 Foundation.Abide.defaults.patterns['alphaspace'] = /^[a-zA-Z ]+$/;
 Foundation.Abide.defaults.patterns['alphaspecial'] = /^[a-zA-Z !-_?.,]+$/;
-
+Foundation.Abide.defaults.patterns['dashes_only'] = /^[0-9a-zA-Z-.]*$/;
+Foundation.Abide.defaults.patterns['dashes_alpha'] = /^[a-zA-Z-]*$/;
 $(document).foundation();
 
 libs.AOS.init();
@@ -151,13 +152,13 @@ $("#general").on("formvalid.zf.abide", function(ev,frm) {
   console.log("good general");
   ev.preventDefault();
   $("#general-information").hide("slow", function(){
-    $("#progress-1 i").removeClass("current")
-    $("#progress-1").removeClass("current")
+    //$("#progress-1 i").removeClass("current")
+    //$("#progress-1").removeClass("current")
     $("#progress-1 i").addClass("done")
     $("#progress-1").addClass("done")
 
-    $("#progress-2 i").addClass("current")
-    $("#progress-2").addClass("current")
+    //$("#progress-2 i").addClass("current")
+    //$("#progress-2").addClass("current")
     $("#configuration-information").hide("slow")
     $("#namespace-information").show("slow")
   });
@@ -169,13 +170,13 @@ $("#namespace").on("formvalid.zf.abide", function(ev,frm) {
   ev.preventDefault();
 
   $("#namespace-information").hide("slow", function(){
-    $("#progress-2 i").removeClass("current")
-    $("#progress-2").removeClass("current")
+    //$("#progress-2 i").removeClass("current")
+    //$("#progress-2").removeClass("current")
     $("#progress-2 i").addClass("done")
     $("#progress-2").addClass("done")
 
-    $("#progress-3 i").addClass("current")
-    $("#progress-3").addClass("current")
+    //$("#progress-3 i").addClass("current")
+    //$("#progress-3").addClass("current")
     $("#configuration-information").show("slow")
   });
 });
@@ -185,13 +186,13 @@ $("#configuration").on("formvalid.zf.abide", function(ev,frm) {
   ev.preventDefault();
   
   $("#configuration-information").hide("slow", function(){
-    $("#progress-3 i").removeClass("current")
-    $("#progress-3").removeClass("current")
+    //$("#progress-3 i").removeClass("current")
+    //$("#progress-3").removeClass("current")
     $("#progress-3 i").addClass("done")
     $("#progress-3").addClass("done")
 
-    $("#progress-4 i").addClass("current")
-    $("#progress-4").addClass("current")
+    //$("#progress-4 i").addClass("current")
+    //$("#progress-4").addClass("current")
     $("#start-information").show("slow")
   });
 });
@@ -202,12 +203,13 @@ $("#configuration-back").click( function(){
   $("#configuration-information").hide("slow", function(){
     $("#namespace-information").show("slow");
 
-    $("#progress-3 i").removeClass("current")
-    $("#progress-3").removeClass("current")
+    //$("#progress-3 i").removeClass("current")
+    //$("#progress-3").removeClass("current")
  
 
-    $("#progress-2 i").addClass("current")
-    $("#progress-2").addClass("current")
+    $("#progress-2 i").removeClass("done");
+    $("#progress-2").removeClass("done");
+    //$("#progress-2").addClass("current")
   });
 })
 
@@ -217,12 +219,14 @@ $("#namespace-back").click( function(){
   $("#namespace-information").hide("slow", function(){
     $("#general-information").show("slow");
     
-    $("#progress-2 i").removeClass("current")
-    $("#progress-2").removeClass("current")
+    //$("#progress-2 i").removeClass("current")
+    //$("#progress-2").removeClass("current")
  
 
-    $("#progress-1 i").addClass("current")
-    $("#progress-1").addClass("current")
+    $("#progress-1 i").removeClass("done");
+    $("#progress-1").removeClass("done");
+    //$("#progress-1 i").addClass("current")
+    //$("#progress-1").addClass("current")
   });
 })
 
@@ -232,12 +236,15 @@ $("#start-back").click( function(){
   $("#start-information").hide("slow", function(){
     $("#configuration-information").show("slow");
     
-    $("#progress-2 i").removeClass("current")
-    $("#progress-2").removeClass("current")
+    //$("#progress-2 i").removeClass("current")
+   // $("#progress-2").removeClass("current")
  
 
-    $("#progress-1 i").addClass("current")
-    $("#progress-1").addClass("current")
+
+    $("#progress-3 i").removeClass("done");
+    $("#progress-3").removeClass("done");
+    //$("#progress-1 i").addClass("current")
+    //$("#progress-1").addClass("current")
   });
 })
 

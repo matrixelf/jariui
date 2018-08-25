@@ -5,7 +5,7 @@ meta-title: JARI Code Generator
 <div id="general-information">
 	<form id="general" data-abide novalidate>
 	  <div data-abide-error class="alert callout" style="display: none;">
-	    <p><i class="fi-alert"></i> There are some errors in your form.</p>
+	    <p><i class="fi-alert"></i> There are some errors in your form. </p>
 	  </div>
 	  
 	  <div class="grid-container">    
@@ -28,12 +28,14 @@ meta-title: JARI Code Generator
 	        <legend>Technology 
 				<div data-tooltip tabindex="1" title="Spring boot is a framework for Spring based applications. MSF4J is a java framework for microservices. .Net funcationality will be added in the furture." class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
 	        </legend>
+
 	        <input type="radio" name="technology" value="SpringBoot" id="SpringBoot"><label for="SpringBoot">Spring Boot</label>
 	        <input type="radio" name="technology" value="MSF4J" id="MSF4J" required><label for="MSF4J">MSF4J</label>
 	        <input class="" type="radio" name="technology" value="Net" id="Net"><label for="Net">.Net</label>
 	      </fieldset>
 	    </div>
 
+<!--
 	    <div class="grid-x grid-margin-x">
 	      <div class="cell small-12">
 	        <label>API Name
@@ -55,15 +57,16 @@ meta-title: JARI Code Generator
 	        </label>
 	      </div>
 	    </div>
+	-->
 
 
 		<div class="grid-x grid-margin-x">
 	      <div class="cell small-12">
 	        <label>Subsystem Name
-				<div data-tooltip tabindex="1" title="The subsystem name will be used for logging. Examples: PWS. MDB, PUB-SUB, etc." class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
-	          <input type="text" placeholder="" aria-describedby="" aria-errormessage="example1Error1" required pattern="alpha">
+				<div data-tooltip tabindex="1" title="The subsystem name is used to uniquely identify the subsystem that sourced the log entry. Examples: PWS. MDB, PUB-SUB, etc." class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
+	          <input type="text" placeholder="Alphabetic Characters Only" aria-describedby="" aria-errormessage="example1Error1" required pattern="alpha">
 	          <span class="form-error" id="example1Error1">
-	            Subsystem Name is required!
+	            Subsystem Name is required and must be alphabetic.
 	          </span>
 	        </label>
 	      </div>
@@ -142,11 +145,15 @@ meta-title: JARI Code Generator
 	    <div class="grid-x grid-margin-x">
 	      <div class="cell small-12">
 	        <label>API Version
-	          <input type="text" placeholder="API Version" aria-describedby="" aria-errormessage="example1Error1" required pattern="version">
+	        	<div data-tooltip tabindex="1" title="The major number will show up in the URL. For example 1.0.0 will result in v1 in the url." class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
+
+	          <input type="text" placeholder="Numeric values and periods are accepted" aria-describedby="" aria-errormessage="example1Error1" required pattern="version">
 	          <span class="form-error" id="example1Error1">
-	            API Version is required!
+	            API Version is required. Numeric values with periods are accepted.
 	          </span>
+
 	        </label>
+
 	      </div>
 	    </div>
         <div class="cell small-12">
@@ -192,9 +199,12 @@ meta-title: JARI Code Generator
 
 	      <div class="cell small-12">
 	        <label>Artifact ID
-	          <input type="text" placeholder="Artifact ID" aria-describedby="" aria-errormessage="example1Error1" required pattern="alpha_numeric">
+
+	          <div data-tooltip tabindex="1" title="One approach is to use your API name with hyphen delimiters. For example, if your API name is 'Billing Info', the artifact ID could be 'billing-info'" class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
+
+	          <input type="text" placeholder="Artifact ID (alphabetic with dashes)" aria-describedby="" aria-errormessage="example1Error1" required pattern="dashes_alpha">
 	          <span class="form-error" id="example1Error1">
-	            Artifact ID is required!
+	            Artifact ID is required and must consist of alphabetic characters and dashes.
 	          </span>
 	        </label>
 	      </div>
@@ -203,9 +213,13 @@ meta-title: JARI Code Generator
 	    <div class="grid-x grid-margin-x">
 	      <div class="cell small-12">
 	        <label>Artifact Version
-	          <input type="text" placeholder="Artifact Version" aria-describedby="" aria-errormessage="example1Error2" required pattern="artifact">
+
+	          <div data-tooltip tabindex="1" title="Example: 1.0.1-SNAPSHOT" class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
+
+
+	          <input type="text" placeholder="Artifact Version can include numbers, periods, dashes, and alphabetic characters" aria-describedby="" aria-errormessage="example1Error2" required pattern="artifact">
 	          <span class="form-error" id="example1Error2">
-	            Artifact Version is required!
+	            Artifact Version is required and can include numbers, periods, dashes, and alphabetic characters.
 	          </span>
 	        </label>
 	      </div>
