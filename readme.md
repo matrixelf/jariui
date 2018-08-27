@@ -78,3 +78,7 @@ Inject an SVG by using an `img` tag with the `.inject-me` class like so:
 ### AOS (Animate on Scroll)
 
 ### Tablesaw
+
+### todo
+login page + brief description/explanation
+generated fields preview (package name and namespace)

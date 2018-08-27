@@ -249,3 +249,28 @@ $("#start-back").click( function(){
 })
 
 
+$( ".watchNamespace" ).change(function() {
+  //var productFamily = $('input[name=type]:checked', '#namespace').val();
+  //var productName = $('#productName option:selected').val();
+
+  //$("#generatedNamespace").html(productFamily +"."+productName+"."+$( "#apiVersion" ).val())
+
+  var namespace = getNamespacePreivew();
+  $("#generatedNamespace").html(namespace);
+});
+
+$( "#apiVersion" ).on("input", function() {
+  //var productFamily = $('input[name=type]:checked', '#namespace').val();
+  //var productName =  $('#productName option:selected').val();
+  //var apiVersion = $( "#apiVersion" ).val()
+  //$("#generatedNamespace").html(productFamily +"."+productName+"."+$( "#apiVersion" ).val())
+  var namespace = getNamespacePreivew();
+  $("#generatedNamespace").html( namespace);
+});
+
+function getNamespacePreivew(){
+  var productFamily = $('input[name=type]:checked', '#namespace').val();
+  var productName =  $('#productName option:selected').val();
+  var apiVersion = $( "#apiVersion" ).val()
+  return productFamily +"."+productName+"."+$( "#apiVersion" ).val();
+}
