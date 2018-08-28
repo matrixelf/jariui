@@ -105,16 +105,25 @@
 	color: #E4E3DE;
 }
 
-.current-progress i{
+.current-progress img{
 	margin-top: 1em;
 	margin-left: 1em;
 	margin-right: 1em;
+
 }
 
 .current-progress a{
 	text-align: center;
 	display: inline-table;
+    margin-left: 1em;
+    margin-right: 1em;
+    vertical-align: bottom;
 }
+
+.current-progress br{
+	vertical-align: bottom;
+}
+
 
 .right{
 	float: right;
