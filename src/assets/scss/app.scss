@@ -101,9 +101,7 @@
 	margin-bottom: 3em;
 }
 
-.current-progress .current{
-	color: #E4E3DE;
-}
+
 
 .current-progress i{
 	margin-top: 1em;
@@ -111,7 +109,7 @@
 	margin-right: 1em;
 }
 
-.current-progress a{
+.current-progress div{
 	text-align: center;
 	display: inline-table;
 }
@@ -164,4 +162,17 @@
 .login-wrap{
 	background-color: $light-gray;
 	padding: 4em;
+}
+
+.current-progress img{
+	width: 5em;
+	height: 4em;
+	margin-right: 2em;
+	margin-left: 2em;
+	margin-top: 1em;
+
+}
+
+.current-progress div{
+	display: inline-block;
 }

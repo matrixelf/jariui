@@ -5,17 +5,14 @@ meta-title: JARI Code Generator
 
 <div id="login-information">
   <form id="login" data-abide novalidate>
-    <div data-abide-error class="alert callout" style="display: none;">
+    <div data-abide-error class="alert callout" style="display: none">
       <p><i class="fi-alert"></i> There are some errors in your form.</p>
     </div>
     <div class="grid-container login-wrap">
       <div class="grid-x grid-margin-x">
         <div class="cell small-6 login-fields">
           <label>Username
-	          <input id="username" type="text" placeholder="Username" aria-describedby="" aria-errormessage="example1Error1" required pattern="alpha">
-	          <span class="form-error" id="example1Error1">
-	          Username is required!
-	          </span>
+	          <input id="username" type="text" placeholder="Username" aria-describedby="">
           </label>
           <label>Password
 	          <input id="password" type="text" placeholder="Password" aria-describedby="" aria-errormessage="example1Error2" required pattern="alpha">
@@ -24,7 +21,7 @@ meta-title: JARI Code Generator
 	          </span>
           </label>
           <fieldset>
-            <button class="right button expanded" type="submit" value="Submit"> Login </button>
+            <button id="login-submit" class="right button expanded" type="submit" value="Submit"> Login </button>
           </fieldset>
         </div>
         <div class="cell small-6">
@@ -148,7 +145,7 @@ meta-title: JARI Code Generator
 </div>
 
 
-<div id="namespace-information" style="display: none">
+<div id="namespace-information" style="display:none">
 
 
 	<form id="namespace" data-abide novalidate>
@@ -273,7 +270,7 @@ meta-title: JARI Code Generator
 
 
 
-<div id="configuration-information" style="display: none">
+<div id="configuration-information" style="display: none;">
 	<form id="configuration" data-abide novalidate>
 	  <div data-abide-error class="alert callout" style="display: none;">
 	    <p><i class="fi-alert"></i> There are some errors in your form.</p>
@@ -379,7 +376,7 @@ meta-title: JARI Code Generator
 	  
 	    <div class="grid-x grid-margin-x">
 	      <fieldset class="cell large-12">
-	        <button class="button right" type="submit" value="Submit"><i class="tilt fa fa-space-shuttle fa-3x"></i></button>
+	        <button class="button right" type="submit" value="Submit"><i class="fa fa-trophy fa-3x" aria-hidden="true"></i></button>
 		  </fieldset>
 	    </div>
 	  </div>

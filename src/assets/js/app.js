@@ -204,7 +204,7 @@ $("#general").on("formvalid.zf.abide", function(ev,frm) {
   console.log("good general");
   ev.preventDefault();
   $("#general-information").hide("slow", function(){
-    $("#progress-1 i").addClass("done")
+    $("#progress-1 a").addClass("done")
     $("#progress-1").addClass("done")
 
     $("#configuration-information").hide("slow")
@@ -346,3 +346,16 @@ function getPackageName(){
 
   return "com.worldpay." +formInformation.productFamily + "." +formInformation.productName+ "." + artifactId;
 }
+
+
+
+
+$("#login").on("formvalid.zf.abide", function(ev,frm) {
+  ev.preventDefault();
+  
+    $("#login-information").hide("slow", function(){
+    $("#general-information").show("slow");
+    $(".current-progress").show("slow");
+ 
+  });
+});
