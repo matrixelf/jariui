@@ -78,6 +78,32 @@
 
 @import "../font-awesome-4.7.0/scss/font-awesome.scss";
 
+@font-face {
+    font-family: anurati_pro;
+    src: url("../anurati_pro/AnuratiPro.otf") format("opentype");
+}
+
+@font-face {
+    font-family: anurati_pro_outline;
+    src: url("../anurati_pro/AnuratiPro-Outline.otf") format("opentype");
+}
+
+.catalyst{
+	vertical-align: text-top;
+	display: inline-block;
+}
+
+.top-bar h3{
+	color: white;
+	font-family: anurati_pro_outline;
+	font-size: 3.5em;
+	line-height: 0.6em;
+	padding-left: 0.25em;
+}
+.logo{
+	display: inline-block;
+}
+
 body {
  min-height: 100vh; /* will cover the 100% of viewport */
  //overflow: hidden;
