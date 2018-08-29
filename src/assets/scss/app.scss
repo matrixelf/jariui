@@ -78,7 +78,13 @@
 
 @import "../font-awesome-4.7.0/scss/font-awesome.scss";
 
-
+body {
+ min-height: 100vh; /* will cover the 100% of viewport */
+ //overflow: hidden;
+ display: block;
+ position: relative;
+ padding-bottom: 100px; /* height of your footer */
+}
 .top-bar a{
 	color: white;
 }
@@ -99,6 +105,10 @@
 	margin: auto;
 	display: table;
 	margin-bottom: 3em;
+}
+	.current-progress a{
+	text-align: center;
+	display: inline-table;
 }
 
 
@@ -155,24 +165,91 @@
 	color: $blue;
 }
 
-#login-information{
-	margin-top: 5em;
-}
-
 .login-wrap{
 	background-color: $light-gray;
 	padding: 4em;
 }
 
-.current-progress img{
-	width: 5em;
-	height: 4em;
-	margin-right: 2em;
-	margin-left: 2em;
-	margin-top: 1em;
+#footer {
+		padding: 1em;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $light-gray;
+    color: $dark-gray;
+    margin-top: 5em;
+
+    //height: 4rem;
+}
+
+.button-login{
+	background-color: $red;
+	color: white;
+}
+
+.login-wrap{
+	background-color: white;
+}
+.help{
+	background-color: $light-gray;
+	color: $dark-gray;
 
 }
 
-.current-progress div{
+.login{
+	//background-color: $light-gray;
+}
+.padding{
+	padding: 5%;
+}
+.link-secondary{
+	color: $dark-gray;
+}
+
+#login-submit:hover{
+	color: white;
+}
+
+.button:hover, .button:focus {
+    background-color: none;
+    //color: white;
+}
+
+#footer a{
+	color: $dark-gray;
+}
+
+#footer p{
+	font-size: 0.75rem;
+	color: $dark-gray;
+}
+
+#login-information{
+	margin-bottom: 3em;
+}
+
+	.current-progress{
+	margin: auto;
+	display: table;
+	margin-bottom: 3em;
+}
+​
+.current-progress .current{
+	color: #E4E3DE;
+}
+​
+
+​
+.current-progress a{
+	text-align: center;
+	display: inline-table;
+}
+
+.fa-space-shuttle{
+	transform: rotate(315deg);
+}
+
+.top-bar img {
 	display: inline-block;
 }

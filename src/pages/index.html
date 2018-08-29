@@ -8,24 +8,32 @@ meta-title: JARI Code Generator
     <div data-abide-error class="alert callout" style="display: none">
       <p><i class="fi-alert"></i> There are some errors in your form.</p>
     </div>
-    <div class="grid-container login-wrap">
-      <div class="grid-x grid-margin-x">
-        <div class="cell small-6 login-fields">
+    <div class="grid-container login-wrap ">
+
+      <div class="grid-x grid-margin-x ">
+
+        <div class="cell medium-6 small-12 padding">
+        	      	<div class="center"> <h3> User login </h3> </div>
           <label>Username
 	          <input id="username" type="text" placeholder="Username" aria-describedby="">
           </label>
           <label>Password
-	          <input id="password" type="text" placeholder="Password" aria-describedby="" aria-errormessage="example1Error2" required pattern="alpha">
+	          <input id="password" type="password" placeholder="Password" aria-describedby="" aria-errormessage="example1Error2" required pattern="alpha">
 	          <span class="form-error" id="example1Error2">
 	          	Password is required!
 	          </span>
           </label>
           <fieldset>
-            <button id="login-submit" class="right button expanded" type="submit" value="Submit"> Login </button>
+            <button id="login-submit" class="right button button-login expanded" type="submit" value="Submit"> LOGIN </button>
           </fieldset>
         </div>
-        <div class="cell small-6">
-        	Help Content
+        <div class="cell medium-6 small-12 padding help">
+        	<h5 class="center"> JARI <br> (Java API Reference Implementation) </h5>
+        	<br>
+        	<p> JARI provides an implementation that incorporates Worldpay standards and best practices to jumpstart API development. JARI was developed by Catalyst. Catalyst enables product delivery teams to work in a more agile manner while driving adoption and reuse of assets and best practices for APIs.</p>
+        	<br>
+        	<a class="right button expanded"> Find out more about Catalyst! </a>
+
         </div>
       </div>
     </div>
@@ -251,7 +259,7 @@ meta-title: JARI Code Generator
 	    <div class="grid-x grid-margin-x">
 	      <fieldset class="cell large-12">
 	        <button class="button right" type="submit" value="Submit"><i class="fa fa-chevron-circle-right fa-3x"></i></button>
-
+<a href="#" id="namespace-back" class="left button" type="" value=""><i class="fa fa-chevron-circle-left fa-3x"></i></a>
 	    </fieldset>
 	    </div>
 	  </div>
@@ -260,7 +268,7 @@ meta-title: JARI Code Generator
 	  <div class="grid-container">
 	    <div class="grid-x grid-margin-x">
 	      <fieldset class="cell large-12">
-	        <button id="namespace-back" class="right button" type="" value=""><i class="fa fa-chevron-circle-left fa-3x"></i></button>
+	        
 	    </fieldset>
 	    </div>
 	  </div>
@@ -276,6 +284,13 @@ meta-title: JARI Code Generator
 	    <p><i class="fi-alert"></i> There are some errors in your form.</p>
 	  </div>
 	  <div class="grid-container">
+
+	  	<div class="center">
+  			<h4> Configuation </h4>
+	  		<p> 
+					The package name is generated from the artifact ID and the major version. 
+	  		</p>
+			</div>
 	    <div class="grid-x grid-margin-x">
 
 
@@ -324,6 +339,7 @@ meta-title: JARI Code Generator
 	    <div class="grid-x grid-margin-x">
 	      <fieldset class="cell large-12">
 	        <button class="button right" type="submit" value="Submit"><i class="fa fa-chevron-circle-right fa-3x"></i></button>
+		  <a href="#" id="configuration-back" class="left button" type="" value=""><i class="fa fa-chevron-circle-left fa-3x"></i></a>
 		  </fieldset>
 	    </div>
 	  </div>
@@ -332,7 +348,7 @@ meta-title: JARI Code Generator
 	  <div class="grid-container">
 	    <div class="grid-x grid-margin-x">
 	      <fieldset class="cell large-12">
-	        <button id="configuration-back" class="right button" type="" value=""><i class="fa fa-chevron-circle-left fa-3x"></i></button>
+	        
 	    </fieldset>
 	    </div>
 	  </div>
@@ -376,7 +392,8 @@ meta-title: JARI Code Generator
 	  
 	    <div class="grid-x grid-margin-x">
 	      <fieldset class="cell large-12">
-	        <button class="button right" type="submit" value="Submit"><i class="fa fa-trophy fa-3x" aria-hidden="true"></i></button>
+	        <button class="button right" type="submit" value="Submit"><i class="fa fa-space-shuttle fa-3x" aria-hidden="true"></i></button>
+	        <a href="#" id="start-back" class="left button" type="" value=""><i class="fa fa-chevron-circle-left fa-3x"></i></a>
 		  </fieldset>
 	    </div>
 	  </div>
@@ -388,7 +405,7 @@ meta-title: JARI Code Generator
 	  <div class="grid-container">
 	    <div class="grid-x grid-margin-x">
 	      <fieldset class="cell large-12">
-	        <button id="start-back" class="right button" type="" value=""><i class="fa fa-chevron-circle-left fa-3x"></i></button>
+
 	    </fieldset>
 	    </div>
 	  </div>
