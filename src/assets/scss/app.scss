@@ -93,6 +93,12 @@
 	display: inline-block;
 }
 
+#footer img{
+	width: 4em;
+	float:right;
+
+}
+
 .top-bar h3{
 	color: white;
 	font-family: anurati_pro_outline;
@@ -157,9 +163,7 @@ body {
 .left{
 	float: left;
 }
-.done{
-	color: #28a745;
-}
+
 
 .tilt{
 	transform: rotate(-45deg); 
@@ -251,8 +255,8 @@ body {
 	color: $dark-gray;
 }
 
-#login-information{
-	margin-bottom: 3em;
+#login-information, #general-information, #namespace-information, #configuration-information, #start-information{
+	margin-bottom: 5em;
 }
 
 	.current-progress{
@@ -261,10 +265,7 @@ body {
 	margin-bottom: 3em;
 }
 ​
-.current-progress .current{
-	color: #E4E3DE;
-}
-​
+
 
 ​
 .current-progress a{
@@ -278,4 +279,12 @@ body {
 
 .top-bar img {
 	display: inline-block;
+}
+
+.current{
+	color: $light-gray;
+}
+
+.current-progress .done{
+	color: #28a745;
 }

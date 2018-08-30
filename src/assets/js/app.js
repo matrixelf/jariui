@@ -207,6 +207,12 @@ $("#general").on("formvalid.zf.abide", function(ev,frm) {
     $("#progress-1 a").addClass("done")
     $("#progress-1").addClass("done")
 
+$("#progress-1 i").removeClass("current")
+    $("#progress-1").removeClass("current")
+
+    $("#progress-2 a").addClass("current")
+    $("#progress-2").addClass("current")
+
     $("#configuration-information").hide("slow")
     $("#namespace-information").show("slow")
 
@@ -226,6 +232,9 @@ $("#namespace").on("formvalid.zf.abide", function(ev,frm) {
     $("#progress-2 i").addClass("done")
     $("#progress-2").addClass("done")
 
+    $("#progress-3 a").addClass("current")
+    $("#progress-3").addClass("current")
+
     $("#configuration-information").show("slow")
 
     formInformation.productFamily = $('input[name=type]:checked', '#namespace').val();
@@ -241,6 +250,9 @@ $("#configuration").on("formvalid.zf.abide", function(ev,frm) {
     $("#progress-3 i").addClass("done")
     $("#progress-3").addClass("done")
 
+    $("#progress-4 a").addClass("current")
+    $("#progress-4").addClass("current")
+
     $("#start-information").show("slow")
   });
 });
@@ -252,6 +264,12 @@ $("#configuration-back").click( function(){
     $("#namespace-information").show("slow");
     $("#progress-2 i").removeClass("done");
     $("#progress-2").removeClass("done");
+
+    $("#progress-2 a").addClass("current")
+    $("#progress-2").addClass("current")
+
+    $("#progress-3 a").removeClass("current")
+    $("#progress-3").removeClass("current")
   });
 })
 
@@ -261,6 +279,12 @@ $("#namespace-back").click( function(){
     
     $("#progress-1 i").removeClass("done");
     $("#progress-1").removeClass("done");
+
+    $("#progress-1 a").addClass("current")
+    $("#progress-1").addClass("current")
+
+        $("#progress-2 a").removeClass("current")
+    $("#progress-2").removeClass("current")
   });
 })
 
@@ -270,6 +294,12 @@ $("#start-back").click( function(){
  
     $("#progress-3 i").removeClass("done");
     $("#progress-3").removeClass("done");
+
+    $("#progress-3 a").addClass("current")
+    $("#progress-3").addClass("current")
+
+    $("#progress-4 a").removeClass("current")
+    $("#progress-4").removeClass("current")
   });
 })
 
