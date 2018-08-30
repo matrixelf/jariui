@@ -78,7 +78,39 @@
 
 @import "../font-awesome-4.7.0/scss/font-awesome.scss";
 
+@font-face {
+    font-family: anurati_pro;
+    src: url("../anurati_pro/AnuratiPro.otf") format("opentype");
+}
 
+@font-face {
+    font-family: anurati_pro_outline;
+    src: url("../anurati_pro/AnuratiPro-Outline.otf") format("opentype");
+}
+
+.catalyst{
+	vertical-align: text-top;
+	display: inline-block;
+}
+
+.top-bar h3{
+	color: white;
+	font-family: anurati_pro_outline;
+	font-size: 3.5em;
+	line-height: 0.6em;
+	padding-left: 0.25em;
+}
+.logo{
+	display: inline-block;
+}
+
+body {
+ min-height: 100vh; /* will cover the 100% of viewport */
+ //overflow: hidden;
+ display: block;
+ position: relative;
+ padding-bottom: 100px; /* height of your footer */
+}
 .top-bar a{
 	color: white;
 }
@@ -100,30 +132,23 @@
 	display: table;
 	margin-bottom: 3em;
 }
-
-.current-progress .current{
-	color: #E4E3DE;
+	.current-progress a{
+	text-align: center;
+	display: inline-table;
 }
 
-.current-progress img{
+
+
+.current-progress i{
 	margin-top: 1em;
 	margin-left: 1em;
 	margin-right: 1em;
-
 }
 
-.current-progress a{
+.current-progress div{
 	text-align: center;
 	display: inline-table;
-    margin-left: 1em;
-    margin-right: 1em;
-    vertical-align: bottom;
 }
-
-.current-progress br{
-	vertical-align: bottom;
-}
-
 
 .right{
 	float: right;
@@ -164,4 +189,93 @@
 
 .blue{
 	color: $blue;
+}
+
+.login-wrap{
+	background-color: $light-gray;
+	padding: 4em;
+}
+
+#footer {
+		padding: 1em;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $light-gray;
+    color: $dark-gray;
+    margin-top: 5em;
+
+    //height: 4rem;
+}
+
+.button-login{
+	background-color: $red;
+	color: white;
+}
+
+.login-wrap{
+	background-color: white;
+}
+.help{
+	background-color: $light-gray;
+	color: $dark-gray;
+
+}
+
+.login{
+	//background-color: $light-gray;
+}
+.padding{
+	padding: 5%;
+}
+.link-secondary{
+	color: $dark-gray;
+}
+
+#login-submit:hover{
+	color: white;
+}
+
+.button:hover, .button:focus {
+    background-color: none;
+    //color: white;
+}
+
+#footer a{
+	color: $dark-gray;
+}
+
+#footer p{
+	font-size: 0.75rem;
+	color: $dark-gray;
+}
+
+#login-information{
+	margin-bottom: 3em;
+}
+
+	.current-progress{
+	margin: auto;
+	display: table;
+	margin-bottom: 3em;
+}
+​
+.current-progress .current{
+	color: #E4E3DE;
+}
+​
+
+​
+.current-progress a{
+	text-align: center;
+	display: inline-table;
+}
+
+.fa-space-shuttle{
+	transform: rotate(315deg);
+}
+
+.top-bar img {
+	display: inline-block;
 }

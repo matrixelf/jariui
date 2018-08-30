@@ -10,10 +10,15 @@
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
   </head>
   <body>
+
   <div class="top-bar" id="main-menu">
     <div class="top-bar-left">
       <div class="top-bar-title logo">
-        <img src="{{root}}assets/img/logo.png" >
+        <img src="{{root}}assets/img/logo.png" > 
+        
+      </div>
+      <div class="catalyst">
+        <h3> | CATALYST </h3>
       </div>
     </div>
     <div class="top-bar-right">
@@ -26,16 +31,35 @@
     </div>
   </div>
 
-  <div class="current-progress">
-    <a class="current" href="#" id="progress-1"> <img src="../assets/img/Nucleus.svg" width="45" height="45"/> <br>General Information</a> 
-    <a href="#" id="progress-2"> <img src="../assets/img/UFO.svg" width="auto" height="auto"/> <br> Namespace </a> 
-    <a href="#" id="progress-3"> <img src="../assets/img/Beaker.svg" width="30" height="20"/><br> Configuration </a> 
-    <a href="#" id="progress-4"> <img src="../assets/img/spaceship_New.svg" width="auto" height="auto"/><br> Start Coding! </a> 
 
+  <div class="current-progress" style="display:none">
+    
+    <a class="current" href="#" id="progress-1"> <i class="current fa fa-file-text fa-3x"></i> <br>General Information</a> 
+    <a href="#" id="progress-2"> <i class="fa fa-id-card fa-3x"></i><br> Namespace </a> 
+    <a href="#" id="progress-3"> <i class="fa fa-keyboard-o fa-3x"></i><br> Configuration </a> 
+    <a href="#" id="progress-4"> <i class="fa fa-grav fa-3x"></i><br> Start Coding! </a> 
+  
   </div>
+
   
     {{> body}}
     
+  <div id="footer"> 
+    <div class="grid-container">    
+      <div class="grid-x grid-margin-x">
+        <div class="cell medium-2 small-12">
+                <a href="https://www.worldpay.com/uk/worldpay-privacy-notice"> Legal/Privacy </a>
+                
+        </div>
+        <div class="cell medium-10 small-12">
+          <p> 
+            &copy; 2018 Worldpay LLC and/or its affiliates. All rights reserved. Worldpay, the logo and any assoicated brand names are trademarks or registered trademarks of Worldpay, LLC and/or its affiliates in the US, UK or other countries. All toher trademarks are the property of their respective owners
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
     <script src="{{root}}assets/js/app.js"></script>
   </body>
 </html>
