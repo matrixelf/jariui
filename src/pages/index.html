@@ -3,7 +3,9 @@ layout: index
 meta-title: JARI Code Generator
 ---
 
-<div id="login-information">
+
+
+<div id="login-information" style="">
   <form id="login" data-abide novalidate>
     <div data-abide-error class="alert callout" style="display: none">
       <p><i class="fi-alert"></i> There are some errors in your form.</p>
@@ -73,7 +75,7 @@ meta-title: JARI Code Generator
 	    <div class="grid-x grid-margin-x">
 	      <fieldset class="cell small-12">
 	        <legend>Technology 
-				<div data-tooltip tabindex="1" title="Spring boot is a framework for Spring based applications. MSF4J is a java framework for microservices. .Net funcationality will be added in the furture." class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
+				<div data-tooltip tabindex="1" title="Spring boot is a framework for Spring based applications. MSF4J is a java framework for microservices. .Net funcationality will be added in the future." class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
 	        </legend>
 
 	        <input type="radio" name="technology" value="SpringBoot" id="SpringBoot"><label for="SpringBoot">Spring Boot</label>
@@ -134,7 +136,38 @@ meta-title: JARI Code Generator
 	        	<input class="button" id="fileupload" name="myfile" type="file" required />
    			</label>
 	      </div>
+
+
 -->
+
+
+
+
+	      <div class="cell small-12">
+	        <label>Developer Email
+	          <input id="infoEmail" type="text" placeholder="Developer Email" aria-describedby="" aria-errormessage="example1Error1" required pattern="email">
+	          <span class="form-error" id="example1Error1">
+	            Please enter a valid email!
+	          </span>
+	        </label>
+	      </div>
+
+	      <div class="cell small-12">
+	      	<label>Upload Swagger JSON File
+	        	<input accept=".json" required class="button" data-validator="swagger" id="fileupload" name="myfile" type="file"  aria-errormessage="yamlerror" />
+   				<!-- <button class="button" type="submit" value="Submit"> Upload Swagger File <i class="fa fa-plus-square fa-2x"></i></button> -->
+	            <span class="form-error" id="yamlerror">
+	              File was not valid
+	            </span>
+	          </label>
+	      </div>
+
+
+
+
+
+	  
+
 	    </div>
 		<div class="required">
 		  * all fields are required 
@@ -175,9 +208,10 @@ meta-title: JARI Code Generator
 
 	      <fieldset class="cell small-12">
 	        <legend>Product Family</legend>
-	        <input class="watchNamespace" type="radio" name="type" value="core" id="core"><label for="core">Core</label>
-	        <input class="watchNamespace" type="radio" name="type" value="integratedpayment" id="integratedPayment" required><label for="integratedPayment">Integrated Payment</label>
-	        <input class="watchNamespace" type="radio" name="type" value="enterprise" id="enterprise"><label for="enterprise">Enterprise</label>
+	        <input class="watchNamespace" type="radio" name="productFamily" value="core" id="core"><label for="core">Core</label>
+	        <input class="watchNamespace" type="radio" name="productFamily" value="integratedpayment" id="integratedPayment" required><label for="integratedPayment">Integrated Payment</label>
+	        <input class="watchNamespace" type="radio" name="productFamily" value="enterprise" id="enterprise"><label for="enterprise">Enterprise</label>
+					<input class="watchNamespace" type="radio" name="productFamily" value="merchant" id="merchant"><label for="merchant">Merchant</label>
 	      </fieldset>
 	    </div>
 
@@ -194,7 +228,8 @@ meta-title: JARI Code Generator
 		        <option value="pricing">Pricing</option>
 		        <option value="authentication">Authentication</option>
 		        <option value="creditRisk">Credit Risk</option>
-		        <option value="loyalty">Loyalty</option>
+		        <option value="loyalty">Loyalty</option>		        
+		        <option value="servicing">Servicing</option>
 	        </select>
 	        </label>
 
@@ -228,7 +263,7 @@ meta-title: JARI Code Generator
 	        <label>API Version
 	        	<div data-tooltip tabindex="1" title="The major number will show up in the URL. For example 1.0.0 will result in v1 in the url." class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
 
-	          <input id="apiVersion" class="watchNamespace" type="text" placeholder="Numeric values and periods are accepted" aria-describedby="" aria-errormessage="example1Error1" required pattern="version">
+	          <input id="appVersion" class="watchNamespace" type="text" placeholder="Numeric values and periods are accepted" aria-describedby="" aria-errormessage="example1Error1" required pattern="version">
 	          <span class="form-error" id="example1Error1">
 	            API Version is required. Numeric values with periods are accepted.
 	          </span>
@@ -338,7 +373,7 @@ meta-title: JARI Code Generator
 	  
 	    <div class="grid-x grid-margin-x">
 	      <fieldset class="cell large-12">
-	        <button class="button right" type="submit" value="Submit"><i class="fa fa-chevron-circle-right fa-3x"></i></button>
+	        <button class="button right" type="submit" value="Submit"><i class="fa fa-space-shuttle fa-3x"></i></button>
 		  <a href="#" id="configuration-back" class="left button" type="" value=""><i class="fa fa-chevron-circle-left fa-3x"></i></a>
 		  </fieldset>
 	    </div>
@@ -355,6 +390,8 @@ meta-title: JARI Code Generator
 </div>
 
 
+<!--
+
 <div id="start-information" style="display: none">
 	<form id="start" data-abide novalidate>
 	  <div id="swaggerError" data-abide-error class="alert callout" style="display: none;">
@@ -365,7 +402,7 @@ meta-title: JARI Code Generator
 
 	      <div class="cell small-12">
 	        	<input class="button" data-validator="swagger" id="fileupload" name="myfile" type="file" aria-errormessage="yamlerror" />
-   				<!-- <button class="button" type="submit" value="Submit"> Upload Swagger File <i class="fa fa-plus-square fa-2x"></i></button> -->
+
 	            <span class="form-error" id="yamlerror">
 	              File was not valid
 	            </span>
@@ -373,7 +410,7 @@ meta-title: JARI Code Generator
 
 	      <div class="cell small-12">
 	        <label>Developer Email
-	          <input type="text" placeholder="Developer Email" aria-describedby="" aria-errormessage="example1Error1" required pattern="email">
+	          <input id="infoEmail" type="text" placeholder="Developer Email" aria-describedby="" aria-errormessage="example1Error1" required pattern="email">
 	          <span class="form-error" id="example1Error1">
 	            Please enter a valid email!
 	          </span>
@@ -409,4 +446,10 @@ meta-title: JARI Code Generator
 	    </fieldset>
 	    </div>
 	  </div>
+</div> -->
+
+<div id="congrats" class="center" style="display: none"> 
+  <a href="#" onclick="window.location.href='/downloadZip'" class="center change-color"> <i class="fa fa-cloud-download fa-15x"></i><br> </a> 
+  <h4 class="center"> Congrats! Start Coding! </h4>
+  <!-- <a href="#" id="download" class="button center" type="" value=""><i class="fa fa-cloud-download fa-3x"></i> <br> Download </a> -->
 </div>

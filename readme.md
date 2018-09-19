@@ -1,3 +1,14 @@
+# Instructions
+Dependencies:
+npm, nodejs, python (2.7), visual studio (specific package can be downloaded)
+
+Clone the repository
+Run 'npm install'
+npm install foundation-cli
+npm install babel-register babel-preset-es2015 
+
+
+
 # ZURB WebApp Template
 
 [![devDependency Status](https://david-dm.org/zurb/foundation-zurb-template/dev-status.svg)](https://david-dm.org/zurb/foundation-zurb-template#info=devDependencies)

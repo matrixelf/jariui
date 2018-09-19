@@ -27,6 +27,8 @@ Foundation.Abide.defaults.patterns['dashes_only'] = /^[0-9a-zA-Z-.]*$/;
 Foundation.Abide.defaults.patterns['dashes_alpha'] = /^[a-zA-Z-]*$/;
 Foundation.Abide.defaults.validators['swagger'] = myCustomValidator;
 
+
+
 function myCustomValidator(
   $el,      /* jQuery element to validate */
   required, /* is the element required according to the `[required]` attribute */
@@ -42,14 +44,15 @@ function myCustomValidator(
     reader.readAsText(file, "UTF-8");
     reader.onload = function (evt) {
         try{
-          var doc = yaml.safeLoad( evt.target.result);
+          //var doc = yaml.safeLoad( evt.target.result);
+          var doc = JSON.parse(evt.target.result);
         } catch(e){
           $('#start').foundation('addErrorClasses', $('#fileupload'));
 
         }
          //var doc = yaml.safeLoad( evt.target.result);
          formInformation.swagger = doc;
-         console.log("posterror");
+
          return bool;
     }
     reader.onerror = function (evt) {
@@ -201,7 +204,7 @@ $("#configuration").on("invalid.zf.abide", function(ev,el) {
 });
 
 $("#general").on("formvalid.zf.abide", function(ev,frm) {
-  console.log("good general");
+  
   ev.preventDefault();
   $("#general-information").hide("slow", function(){
     $("#progress-1 a").addClass("done")
@@ -218,10 +221,10 @@ $("#progress-1 i").removeClass("current")
 
     formInformation.type = $('input[name=type]:checked', '#general').val();
     formInformation.technology = $('input[name=technology]:checked', '#general').val(); 
-    formInformation.subsystem = $( "#subsystemName" ).val()
-    formInformation.email = $( "#email" ).val()
-
-    console.log(formInformation);
+    formInformation.subSystemName = $( "#subsystemName" ).val()
+    formInformation.infoEmail = $( "#infoEmail" ).val()  
+    formInformation.appDescription = formInformation.swagger.description;
+    formInformation.appName = formInformation.swagger.title;
   });
 });
 
@@ -237,29 +240,61 @@ $("#namespace").on("formvalid.zf.abide", function(ev,frm) {
 
     $("#configuration-information").show("slow")
 
-    formInformation.productFamily = $('input[name=type]:checked', '#namespace').val();
+    formInformation.productFamily = $('input[name=productFamily]:checked', '#namespace').val();
     formInformation.productName =  $('#productName option:selected').val();
-    formInformation.apiVersion = $( "#apiVersion" ).val()
+    formInformation.appVersion = $( "#appVersion" ).val()
   });
 });
 
 $("#configuration").on("formvalid.zf.abide", function(ev,frm) {
-  ev.preventDefault();
-  
+  //ev.preventDefault();
+
   $("#configuration-information").hide("slow", function(){
+    formInformation.artifactId = $( "#artifactId" ).val()
+    formInformation.artifactVersion = $( "#artifactVersion" ).val()
+    console.log(formInformation); 
+        $("#progress-3 i").addClass("done")
+    $("#progress-3").addClass("done")
+    $("#congrats").show("slow")
+  });
+  /*$("#configuration-information").hide("slow", function(){
     $("#progress-3 i").addClass("done")
     $("#progress-3").addClass("done")
 
-    $("#progress-4 a").addClass("current")
-    $("#progress-4").addClass("current")
+    //$("#progress-4 a").addClass("current")
+    //$("#progress-4").addClass("current")
 
-    $("#start-information").show("slow")
-  });
+    //$("#start-information").show("slow")
+
+
+  });*/
 });
+
+$("#configuration").on("submit", function(ev,frm) {
+  formInformation.artifactId = $( "#artifactId" ).val()
+  formInformation.artifactVersion = $( "#artifactVersion" ).val()
+  console.log("submit");
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "formSubmission", true);
+  xhttp.setRequestHeader("Content-type", "application/json");
+  xhttp.send(JSON.stringify(formInformation));
+  //call ajax call
+});
+
+/*
+$("#start").on("formvalid.zf.abide", function(ev,frm) {
+  ev.preventDefault();
+
+  formInformation.appDescription = formInformation.swagger.info.description;
+  formInformation.appName = formInformation.swagger.info.title;
+  formInformation.infoEmail = $( "#infoEmail" ).val()
+  
+  console.log (formInformation);
+});*/
 
 
 $("#configuration-back").click( function(){
-  console.log("configuration back");
+
   $("#configuration-information").hide("slow", function(){
     $("#namespace-information").show("slow");
     $("#progress-2 i").removeClass("done");
@@ -288,6 +323,7 @@ $("#namespace-back").click( function(){
   });
 })
 
+/*
 $("#start-back").click( function(){  
   $("#start-information").hide("slow", function(){
     $("#configuration-information").show("slow");
@@ -300,9 +336,10 @@ $("#start-back").click( function(){
 
     $("#progress-4 a").removeClass("current")
     $("#progress-4").removeClass("current")
+
   });
 })
-
+*/
 
 $( ".watchNamespace" ).change(function() {
   var namespace = getNamespacePreview();
@@ -315,10 +352,10 @@ $( "#apiVersion" ).on("input", function() {
 });
 
 function getNamespacePreview(){
-  var productFamily = $('input[name=type]:checked', '#namespace').val();
+  var productFamily = $('input[name=productFamily]:checked', '#namespace').val();
   var productName =  $('#productName option:selected').val();
-  var apiVersion = $( "#apiVersion" ).val()
-  console.log(apiVersion)
+  var apiVersion = $( "#appVersion" ).val()
+  
   var majorVersion;
   var target = apiVersion.indexOf(".");
   if (target != -1){
@@ -337,10 +374,10 @@ $("#fileupload").change( function(e){
     var reader = new FileReader();
     reader.readAsText(file, "UTF-8");
     reader.onload = function (evt) {
-        console.log( evt.target.result) ;
 
          try{
-          var doc = yaml.safeLoad( evt.target.result);
+          //var doc = yaml.safeLoad( evt.target.result);
+          var doc = JSON.parse(evt.target.result);
         } catch(e){
 
           $('#start').foundation('addErrorClasses', $('#fileupload'));
@@ -389,3 +426,33 @@ $("#login").on("formvalid.zf.abide", function(ev,frm) {
  
   });
 });
+
+window.formInformation = formInformation;
+
+//var i =0;
+//while(i < 50000){
+
+// function sleep(milliseconds) {
+//   var start = new Date().getTime();
+//   for (var i = 0; i < 1e7; i++) {
+//     if ((new Date().getTime() - start) > milliseconds){
+//       break;
+//     }
+//   }
+// }
+
+// function turn (i){
+//     var innerArrow = $(".fa-grav");
+//     innerArrow.css("transform", "rotate(" + i + "deg)");
+//     sleep(1000);
+//     //i = i+1;  
+// }
+// var i = 0;
+// while( i< 50000){
+//   turn(i)
+//   i=i+1;
+
+  
+// }
+
+//}
