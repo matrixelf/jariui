@@ -1,0 +1,529 @@
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARI Code Generator</title>
+    <link rel="stylesheet" href="assets/css/app.css">
+  </head>
+  <body>
+
+  <div class="top-bar" id="main-menu">
+    <div class="top-bar-left">
+      <div class="top-bar-title logo">
+        <img src="assets/img/logo.png" > 
+        
+      </div>
+      <div class="catalyst">
+        <h3> | cataLyst </h3>
+      </div>
+    </div>
+    <div class="top-bar-right">
+
+<div class="title-bar" data-responsive-toggle="nav" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle="nav"></button>
+  <div class="title-bar-title">Menu</div>
+</div>
+
+      <ul id="nav" class="menu vertical medium-horizontal expanded" data-animate="scale-in-up hinge-out-from-top" data-responsive-menu="drilldown medium-dropdown">
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">APIs/History</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="current-progress" style="display:none">
+    
+    <a class="current" href="#" id="progress-1">  <i class="current fa fa-file-text fa-3x"></i> <br>General Information</a> 
+    <a href="#" id="progress-2"> <i class="fa fa-id-card fa-3x"></i><br> Namespace </a> 
+    <a href="#" id="progress-3"> <i class="fa fa-keyboard-o fa-3x"></i><br> Configuration </a> 
+    <!-- grav -->
+  
+  </div>
+
+  
+    
+    
+    
+    <div id="login-information" style="">
+      <form id="login" data-abide novalidate>
+        <div data-abide-error class="alert callout" style="display: none">
+          <p><i class="fi-alert"></i> There are some errors in your form.</p>
+        </div>
+        <div class="grid-container login-wrap ">
+    
+          <div class="grid-x grid-margin-x ">
+    
+            <div class="cell medium-6 small-12 padding">
+            	      	<div class="center"> <h3> User login </h3> </div>
+              <label>Username
+    	          <input id="username" type="text" placeholder="Username" aria-describedby="">
+              </label>
+              <label>Password
+    	          <input id="password" type="password" placeholder="Password" aria-describedby="" aria-errormessage="example1Error2" required pattern="alpha">
+    	          <span class="form-error" id="example1Error2">
+    	          	Password is required!
+    	          </span>
+              </label>
+              <fieldset>
+                <button id="login-submit" class="right button button-login expanded" type="submit" value="Submit"> LOGIN </button>
+              </fieldset>
+            </div>
+            <div class="cell medium-6 small-12 padding help">
+            	<h5 class="center"> JARI <br> (Java API Reference Implementation) </h5>
+            	<br>
+            	<p> JARI provides an implementation that incorporates Worldpay standards and best practices to jumpstart API development. JARI was developed by Catalyst. Catalyst enables product delivery teams to work in a more agile manner while driving adoption and reuse of assets and best practices for APIs.</p>
+            	<br>
+            	<a class="right button expanded"> Find out more about Catalyst! </a>
+    
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    	  
+    
+    
+    <div id="general-information" style="display: none">
+    	<form id="general" data-abide novalidate>
+    	  <div data-abide-error class="alert callout" style="display: none;">
+    	    <p><i class="fi-alert"></i> There are some errors in your form. </p>
+    	  </div>
+    	  
+    	  <div class="grid-container">    
+    
+    	  	<div class="center">
+    	  		<h4> General Information </h4>
+    		  
+    		</div>
+    	    <div class="grid-x grid-margin-x">
+    
+    
+    	      <fieldset class="cell small-12">
+    	        <legend>API Type 	        
+    	        	<!-- https://forums.mulesoft.com/questions/46895/system-api-process-api-experience-api-design-princ.html -->
+    	        	<div data-tooltip tabindex="1" title="A system API is a microservice. A process API is a combination of multiple system APIs. An experience API is the layer the consumer will interact with." class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
+    	        </legend>
+    
+    	        <input type="radio" name="type" value="process" id="process"><label for="process">Process</label>
+    	        <input type="radio" name="type" value="system" id="system" required><label for="system">System</label>
+    	        <input class="" type="radio" name="type" value="experience" id="experience"><label for="experience">Experience</label>
+    	      </fieldset>
+    	    </div>
+    
+    	    <div class="grid-x grid-margin-x">
+    	      <fieldset class="cell small-12">
+    	        <legend>Technology 
+    				<div data-tooltip tabindex="1" title="Spring boot is a framework for Spring based applications. MSF4J is a java framework for microservices. .Net funcationality will be added in the future." class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
+    	        </legend>
+    
+    	        <input type="radio" name="technology" value="SpringBoot" id="SpringBoot"><label for="SpringBoot">Spring Boot</label>
+    	        <input type="radio" name="technology" value="MSF4J" id="MSF4J" required><label for="MSF4J">MSF4J</label>
+    	        <input class="" type="radio" name="technology" value="Net" id="Net"><label for="Net">.Net</label>
+    	      </fieldset>
+    	    </div>
+    
+    <!--
+    	    <div class="grid-x grid-margin-x">
+    	      <div class="cell small-12">
+    	        <label>API Name
+    	          <input type="text" placeholder="API Name" aria-describedby="" aria-errormessage="example1Error1" required pattern="alphaspace">
+    	          <span class="form-error" id="example1Error1">
+    	            API Name is required and must only contain alphabetic characters and spaces!
+    	          </span>
+    	        </label>
+    	      </div>
+    	    </div>
+    
+    		<div class="grid-x grid-margin-x">
+    	      <div class="cell small-12">
+    	        <label>API Description
+    	          <input type="text" placeholder="API Description" aria-describedby="" aria-errormessage="example1Error1" required pattern="alphaspecial">
+    	          <span class="form-error" id="example1Error1">
+    	            API description is required!
+    	          </span>
+    	        </label>
+    	      </div>
+    	    </div>
+    	-->
+    
+    
+    		<div class="grid-x grid-margin-x">
+    	      <div class="cell small-12">
+    	        <label>Subsystem Name
+    				<div data-tooltip tabindex="1" title="The subsystem name is used to uniquely identify the subsystem that sourced the log entry. Examples: PWS. MDB, PUB-SUB, etc." class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
+    	          <input id="subsystemName" type="text" placeholder="Alphabetic characters and dashes only" aria-describedby="" aria-errormessage="example1Error1" required pattern="dashes_alpha">
+    	          <span class="form-error" id="example1Error1">
+    	            Subsystem Name is required and must contain only alphabetic characters and dashes.
+    	          </span>
+    	        </label>
+    	      </div>
+    
+    <!--
+    	      <div class="cell small-12">
+    	        <label>Developer Email
+    	          <input id="email" type="text" placeholder="Developer Email" aria-describedby="" aria-errormessage="example1Error1" required pattern="email">
+    	          <span class="form-error" id="example1Error1">
+    	            Please enter a valid email!
+    	          </span>
+    	        </label>
+    	      </div>
+    
+    
+    	      <div class="cell small-12">
+    	      	<label>Please upload your swagger file
+    	        	<input class="button" id="fileupload" name="myfile" type="file" required />
+       			</label>
+    	      </div>
+    
+    
+    -->
+    
+    
+    
+    
+    	      <div class="cell small-12">
+    	        <label>Developer Email
+    	          <input id="infoEmail" type="text" placeholder="Developer Email" aria-describedby="" aria-errormessage="example1Error1" required pattern="email">
+    	          <span class="form-error" id="example1Error1">
+    	            Please enter a valid email!
+    	          </span>
+    	        </label>
+    	      </div>
+    
+    	      <div class="cell small-12">
+    	      	<label>Upload Swagger JSON File
+    	        	<input accept=".json" required class="button" data-validator="swagger" id="fileupload" name="myfile" type="file"  aria-errormessage="yamlerror" />
+       				<!-- <button class="button" type="submit" value="Submit"> Upload Swagger File <i class="fa fa-plus-square fa-2x"></i></button> -->
+    	            <span class="form-error" id="yamlerror">
+    	              File was not valid
+    	            </span>
+    	          </label>
+    	      </div>
+    
+    
+    
+    
+    
+    	  
+    
+    	    </div>
+    		<div class="required">
+    		  * all fields are required 
+    		</div>
+    
+    	  </div>
+    
+    	  <div class="grid-container">
+    	    <div class="grid-x grid-margin-x">
+    	      <fieldset class="cell large-12">
+    	        <button class="button right" type="submit" value="Submit"><i class="fa fa-chevron-circle-right fa-3x"></i></button>
+    	    </fieldset>
+    	    </div>
+    	  </div>
+    	</form>
+    </div>
+    
+    
+    <div id="namespace-information" style="display:none">
+    
+    
+    	<form id="namespace" data-abide novalidate>
+    	  <div data-abide-error class="alert callout" style="display: none;">
+    	    <p><i class="fi-alert"></i> There are some errors in your form.</p>
+    	  </div>
+    	  
+    	  <div class="grid-container">    
+    
+    
+      	<div class="center">
+      		<h4> Namespace </h4>
+    	  <p> 
+    		The namespace is generated from the product family and product name. 
+    	  </p>
+    	</div>
+    
+    	    <div class="grid-x grid-margin-x">
+    
+    	      <fieldset class="cell small-12">
+    	        <legend>Product Family</legend>
+    	        <input class="watchNamespace" type="radio" name="productFamily" value="core" id="core"><label for="core">Core</label>
+    	        <input class="watchNamespace" type="radio" name="productFamily" value="integratedpayment" id="integratedPayment" required><label for="integratedPayment">Integrated Payment</label>
+    	        <input class="watchNamespace" type="radio" name="productFamily" value="enterprise" id="enterprise"><label for="enterprise">Enterprise</label>
+    					<input class="watchNamespace" type="radio" name="productFamily" value="merchant" id="merchant"><label for="merchant">Merchant</label>
+    	      </fieldset>
+    	    </div>
+    
+    	    <div class="grid-x grid-margin-x">
+    	      <fieldset class="cell small-12">
+    	        <label>Product Name
+    		      <select class="watchNamespace" id="productName" required>
+    		        <option value="boarding">Boarding</option>
+    		        <option value="underwriting">Underwriting</option>
+    		        <option value="sales">Sales</option>
+    		        <option value="payment">Payment</option>
+    		        <option value="chargeback">Chargeback</option>
+    		        <option value="security">Security</option>
+    		        <option value="pricing">Pricing</option>
+    		        <option value="authentication">Authentication</option>
+    		        <option value="creditRisk">Credit Risk</option>
+    		        <option value="loyalty">Loyalty</option>		        
+    		        <option value="servicing">Servicing</option>
+    	        </select>
+    	        </label>
+    
+    	      </fieldset>
+    	    </div>
+    
+    
+    
+    
+    
+    
+    <!--
+    	    <div class="grid-x grid-margin-x">
+    	      <fieldset class="cell small-12">
+    	        <legend>Product Name</legend>
+    	        <input type="radio" name="productName" value="boarding" id="boarding" required><label for="boarding">Boarding</label>
+    			<input type="radio" name="productName" value="underwriting" id="underwriting"><label for="underwriting">Underwriting</label>
+    			<input type="radio" name="productName" value="sales" id="sales"><label for="sales">Sales</label>
+    			<input type="radio" name="productName" value="payment" id="payment"><label for="payment">Payment</label>
+    			<input type="radio" name="productName" value="chargeback" id="chargeback"><label for="chargeback">Chargeback</label>
+    	        <input type="radio" name="productName" value="security" id="security"><label for="security">Security</label>
+    			<input type="radio" name="productName" value="pricing" id="pricing"><label for="pricing">Pricing</label>
+    			<input type="radio" name="productName" value="authentication" id="authentication"><label for="authentication">Authentication</label>
+    			<input type="radio" name="productName" value="creditRisk" id="creditRisk"><label for="creditRisk">Credit Risk</label>
+    			<input type="radio" name="productName" value="loyalty" id="loyalty"><label for="loyalty">Loyalty</label>
+    	      </fieldset>
+    	    </div>
+    -->
+    	    <div class="grid-x grid-margin-x">
+    	      <div class="cell small-12">
+    	        <label>API Version
+    	        	<div data-tooltip tabindex="1" title="The major number will show up in the URL. For example 1.0.0 will result in v1 in the url." class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
+    
+    	          <input id="appVersion" class="watchNamespace" type="text" placeholder="Numeric values and periods are accepted" aria-describedby="" aria-errormessage="example1Error1" required pattern="version">
+    	          <span class="form-error" id="example1Error1">
+    	            API Version is required. Numeric values with periods are accepted.
+    	          </span>
+    
+    	        </label>
+    
+    	      </div>
+    	    </div>
+            <div class="cell small-12">
+    	  	  <div class="required">
+    	  		   * all fields are required 
+      		  </div>
+      		  <div>
+    		    <div class="center gray"> <h5> Preview of Namespace <div data-tooltip tabindex="1" title="To preview the namespace please fill out the for information" class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div></h5>
+    
+    
+    				<div id="generatedNamespace" class="blue"> </div>
+    		    </div>
+    		    
+      		  </div>
+      	    </div>
+    
+    
+    
+    	  </div>
+    
+    	  <div class="grid-container">
+    	    <div class="grid-x grid-margin-x">
+    	      <fieldset class="cell large-12">
+    	        <button class="button right" type="submit" value="Submit"><i class="fa fa-chevron-circle-right fa-3x"></i></button>
+    <a href="#" id="namespace-back" class="left button" type="" value=""><i class="fa fa-chevron-circle-left fa-3x"></i></a>
+    	    </fieldset>
+    	    </div>
+    	  </div>
+    	</form>
+    
+    	  <div class="grid-container">
+    	    <div class="grid-x grid-margin-x">
+    	      <fieldset class="cell large-12">
+    	        
+    	    </fieldset>
+    	    </div>
+    	  </div>
+    	        
+    </div>
+    
+    
+    
+    
+    <div id="configuration-information" style="display: none;">
+    	<form id="configuration" data-abide novalidate>
+    	  <div data-abide-error class="alert callout" style="display: none;">
+    	    <p><i class="fi-alert"></i> There are some errors in your form.</p>
+    	  </div>
+    	  <div class="grid-container">
+    
+    	  	<div class="center">
+      			<h4> Configuation </h4>
+    	  		<p> 
+    					The package name is generated from the artifact ID and the major version. 
+    	  		</p>
+    			</div>
+    	    <div class="grid-x grid-margin-x">
+    
+    
+    
+    	      <div class="cell small-12">
+    	        <label>Artifact ID
+    
+    	          <div data-tooltip tabindex="1" title="One approach is to use your API name with hyphen delimiters. For example, if your API name is 'Billing Info', the artifact ID could be 'billing-info'" class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
+    
+    	          <input id="artifactId" type="text" placeholder="Artifact ID (alphabetic with dashes)" aria-describedby="" aria-errormessage="example1Error1" required pattern="dashes_alpha">
+    	          <span class="form-error" id="example1Error1">
+    	            Artifact ID is required and must consist of alphabetic characters and dashes.
+    	          </span>
+    	        </label>
+    	      </div>
+    	    </div>
+    
+    	    <div class="grid-x grid-margin-x">
+    	      <div class="cell small-12">
+    	        <label>Artifact Version
+    
+    	          <div data-tooltip tabindex="1" title="Example: 1.0.1-SNAPSHOT" class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div>
+    
+    
+    	          <input id="artifactVersion" type="text" placeholder="Artifact Version can include numbers, periods, dashes, and alphabetic characters" aria-describedby="" aria-errormessage="example1Error2" required pattern="artifact">
+    	          <span class="form-error" id="example1Error2">
+    	            Artifact Version is required and can include numbers, periods, dashes, and alphabetic characters.
+    	          </span>
+    	        </label>
+    	      </div>
+    	    </div>
+            <div class="cell small-12">
+    		    <div class="required">
+    		  	   * all fields are required 
+    		    </div>
+      		  <div>
+    		    <div class="center gray"> <h5> Preview of Package Name <div data-tooltip tabindex="1" title="To preview the package name please fill out the for information" class="info" type="submit" value="Submit"><i class="fa fa-info-circle fa-1x"></i></div></h5>
+    
+    
+    				<div id="generatedPackageName" class="blue"> </div>
+    		    </div>
+    		    
+      		  </div>
+    	    </div>
+    	  
+    	    <div class="grid-x grid-margin-x">
+    	      <fieldset class="cell large-12">
+    	        <button class="button right" type="submit" value="Submit"><i class="fa fa-space-shuttle fa-3x"></i></button>
+    		  <a href="#" id="configuration-back" class="left button" type="" value=""><i class="fa fa-chevron-circle-left fa-3x"></i></a>
+    		  </fieldset>
+    	    </div>
+    	  </div>
+    	</form>
+    
+    	  <div class="grid-container">
+    	    <div class="grid-x grid-margin-x">
+    	      <fieldset class="cell large-12">
+    	        
+    	    </fieldset>
+    	    </div>
+    	  </div>
+    </div>
+    
+    
+    <!--
+    
+    <div id="start-information" style="display: none">
+    	<form id="start" data-abide novalidate>
+    	  <div id="swaggerError" data-abide-error class="alert callout" style="display: none;">
+    	    <p><i class="fi-alert"></i> There are some errors in your form.</p>
+    	  </div>
+    	  <div class="grid-container">
+    	    <div class="grid-x grid-margin-x">
+    
+    	      <div class="cell small-12">
+    	        	<input class="button" data-validator="swagger" id="fileupload" name="myfile" type="file" aria-errormessage="yamlerror" />
+    
+    	            <span class="form-error" id="yamlerror">
+    	              File was not valid
+    	            </span>
+    	      </div>
+    
+    	      <div class="cell small-12">
+    	        <label>Developer Email
+    	          <input id="infoEmail" type="text" placeholder="Developer Email" aria-describedby="" aria-errormessage="example1Error1" required pattern="email">
+    	          <span class="form-error" id="example1Error1">
+    	            Please enter a valid email!
+    	          </span>
+    	        </label>
+    	      </div>
+    
+    	      <div class="cell small-12">
+    			  <div class="required">
+    				   * all fields are required 
+    			  </div>
+    		  </div>
+    
+    	    </div>
+    
+    
+    	  
+    	    <div class="grid-x grid-margin-x">
+    	      <fieldset class="cell large-12">
+    	        <button class="button right" type="submit" value="Submit"><i class="fa fa-space-shuttle fa-3x" aria-hidden="true"></i></button>
+    	        <a href="#" id="start-back" class="left button" type="" value=""><i class="fa fa-chevron-circle-left fa-3x"></i></a>
+    		  </fieldset>
+    	    </div>
+    	  </div>
+    	</form>
+    
+    
+    
+    
+    	  <div class="grid-container">
+    	    <div class="grid-x grid-margin-x">
+    	      <fieldset class="cell large-12">
+    
+    	    </fieldset>
+    	    </div>
+    	  </div>
+    </div> -->
+    
+    <div id="congrats" class="center" style="display: none"> 
+      <a href="#" onclick="window.location.href='/downloadZip'" class="center change-color"> <i class="fa fa-cloud-download fa-15x"></i><br> </a> 
+      <h4 class="center"> Congrats! Start Coding! </h4>
+      <!-- <a href="#" id="download" class="button center" type="" value=""><i class="fa fa-cloud-download fa-3x"></i> <br> Download </a> -->
+    </div>
+    
+  <div id="footer"> 
+    <div class="grid-container">    
+      <div class="grid-x grid-margin-x">
+        <div class="cell medium-2 small-12">
+                <a href="https://www.worldpay.com/uk/worldpay-privacy-notice"> Legal/Privacy </a>
+
+                
+        </div>
+        <div class="cell medium-8 small-12">
+          <p> 
+            &copy; 2018 Worldpay LLC and/or its affiliates. All rights reserved. Worldpay, the logo and any assoicated brand names are trademarks or registered trademarks of Worldpay, LLC and/or its affiliates in the US, UK or other countries. All other trademarks are the property of their respective owners
+
+          </p>
+            
+        </div>
+
+        <div class="cell medium-2 small-12">
+          
+          <img src="assets/img/CatalystLogo.png" >            
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
